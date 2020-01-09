@@ -16,27 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.manish.githubconsumeresponse.model.RepoResponse;
 
 @RestController
-//@RequestMapping("/payload")
 public class ConsumeGithubResponse {
 
 	@RequestMapping("/")
 	@ResponseBody
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String getResponse(@RequestBody RepoResponse repoResponse) {
-		return "Hello" + repoResponse.getAction();
+		return repoResponse.getAction();
 		
 	}
-	
-	/*
-	 * @POST
-	 * 
-	 * @RequestMapping("/")
-	 * 
-	 * @Consumes(MediaType.APPLICATION_JSON) //@Produces(MediaType.APPLICATION_JSON)
-	 * public void gethrmessage(RequestBody requestBody) {
-	 * System.out.println(requestBody.toString()); //
-	 * System.out.println(requestBody.foo); //
-	 * System.out.println(requestBody.count); }
-	 */
-
 }
